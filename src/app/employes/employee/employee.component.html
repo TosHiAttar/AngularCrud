@@ -1,0 +1,41 @@
+
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.selectedEmployee.$key" >
+   
+    <div class="md-form">
+        <i class="fa fa-user-circle-o fa-lg prefix grey-text"></i>
+        <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name"  mdbActive  required>
+        <label for="defaultForm-pass">Name</label>  
+     </div>
+
+       <div class="md-form">
+          <i class="fa fa-map-pin fa-lg prefix grey-text"></i>
+        <input type="text" class="form-control" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" mdbActive required>
+        <label for="defaultForm-name">Position</label>
+      </div>
+
+       <div class="md-form">
+          <i class="fa fa-university fa-5x prefix grey-text"></i>
+         <input type="text"  class="form-control" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" mdbActive required >
+          <label for="defaultForm-name">Office</label> 
+        </div>
+          
+          <div class="md-form">
+                        <i class="fa fa-inr fa-lg prefix grey-text"></i>
+              <input type="number"  class="form-control" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" mdbActive required> 
+              <label for="defaultForm-name">Salary</label>
+            </div>
+
+            
+              <div class="md-form-group">
+                <button class="btn btn-primary" type="submit" [disabled]="!employeeForm.valid">
+                  <i class="fa fa-floppy-o"></i>
+                  Submit</button>
+                <button class="btn btn-elegant btn-rounded" type="button" [disabled]="!employeeForm.valid" (click)="resetForm(employeeForm)" >
+                  <i class="fa fa-refresh"></i>
+                  Reset</button>
+              </div>
+</form>
+
+

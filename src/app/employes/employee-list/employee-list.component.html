@@ -1,0 +1,36 @@
+
+
+<!--Table-->
+<table class="table table-sm-hover">
+
+    <!--Table head-->
+    <thead class="mdb-color darken-3">
+        <tr class="text-white">
+           <th>Full Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Salary</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <!--Table head-->
+
+    <!--Table body-->
+    <tbody>
+        <tr *ngFor="let employee of employeeList">
+            <td><b>{{employee.name}}</b></td>
+            <td><b>{{employee.position}}</b></td>
+            <td><b>{{employee.office}}</b></td>
+            <td><b>{{employee.salary}}</b></td>
+            <td>
+             <a class="btn btn-brown btn-sm" (click)="onEdit(employee)"><i class="fa fa-pencil"></i></a></td>
+            <td> <a class="btn btn-danger btn-sm " (click)="onDelete(employee.$key)"><i class="fa fa-trash-o"></i></a>
+              </td>
+        </tr>
+      
+    </tbody>
+    <!--Table body-->
+</table>
+<!--Table-->
+                                    
